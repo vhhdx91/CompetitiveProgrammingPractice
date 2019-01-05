@@ -1,0 +1,43 @@
+/**Given a series of numbers  2 , 10 , 30 , 68 , 130 .., Identify the pattern in the series and help to identify the integers at other indices . Indices are starting from 1 .
+
+Input:  The first line of the input contains an integer T denoting the number of test cases. The description of each testcase follows. Each test case contains a single line with 1 integer X (index) .
+
+
+Output:  For each test case output a new line with a single integer which should be the the number at the Xth index .
+
+
+Constraints:  1 ≤ T ≤ 200
+                     1 ≤ X ≤ 200
+
+
+Example:     
+
+Input:
+4
+8 
+12
+200
+145
+Output:
+520
+1740
+8000200
+3048770
+*/
+
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	{
+	    Scanner sc = new Scanner(System.in);
+	    int testcase = sc.nextInt();
+	    while(testcase-- > 0)
+	    {
+	        int n = sc.nextInt();
+	        System.out.println((int)(Math.pow(n, 3) + n));
+	    }
+	 
+	}
+}
