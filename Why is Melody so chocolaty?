@@ -1,0 +1,60 @@
+/* Chunky gets happy by eating Melody.
+Given an array of N elements each element represent happiness chunky get by eating melody.
+Chunky knows why melody is so chocolaty but will only tell you once you tell him the Max happiness he can get by eating two adjacent melodies.
+
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case consists of two lines. First line of each test case contains an integer N and the second line contains N space separated array elements.
+
+Output:
+For each test case, print the Maximum Happiness in new line.
+
+Constraints:
+1 <= T <= 100
+1 <= N <= 100000
+-100000 <= A[i] <= 100000
+ 
+
+Example:
+
+Input:
+2
+5
+1 2 3 4 5
+4
+5 2 3 4
+
+Output:
+9
+7
+*/
+
+import java.lang.*;
+import java.io.*;
+class GFG
+{
+	public static void main (String[] args)
+	{
+	    Scanner sc = new Scanner(System.in);
+	    int testcase = sc.nextInt();
+	    while(testcase-- > 0)
+	    {
+	        int n = sc.nextInt();
+	        int arr[] = new int[n];
+	        for(int i=0;i<n;i++)
+	            arr[i] = sc.nextInt();
+	        int sum = 0, maxSum = -100000;
+	        for(int i=0;i<n-1;i++)
+	        {
+	            sum = sumOfTwoAdjNum(arr[i], arr[i+1]);
+	            maxSum = (sum > maxSum) ? sum : maxSum;
+	        }
+	        System.out.println(maxSum);
+	    }
+	 
+	}
+	
+	public static int sumOfTwoAdjNum(int a, int b)
+	{
+	    return (a+b);
+	}
+}
